@@ -1,0 +1,14 @@
+<div class="pgs-standard-coordinates-editor-axis">
+  <span class="pgs-standard-coordinates-editor-icon">
+    <fa-icon icon="arrows-alt-h" size="sm"></fa-icon>
+  </span>
+  <input mat-input class="pgs-input" [(value)]="coordinate.lng" onKeyDown="return false" (input)="this.setCoordinate();">
+  <span>&nbsp;lon</span>
+</div>
+<div class="pgs-standard-coordinates-editor-axis">
+  <span class="pgs-standard-coordinates-editor-icon">
+    <fa-icon icon="arrows-alt-v" size="sm"></fa-icon>
+  </span>
+  <input mat-input class="pgs-input" [(value)]="coordinate.lat" onKeyDown="return false" (input)="this.setCoordinate();">
+  <span>&nbsp;lat</span>
+</div>

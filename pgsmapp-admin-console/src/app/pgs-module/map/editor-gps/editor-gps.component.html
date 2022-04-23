@@ -1,0 +1,7 @@
+<div class="pgs-map-editor-section">
+  <div class="pgs-map-editor-container">
+    <span><b>Abilita GPS</b></span>
+    <mat-slide-toggle [(ngModel)]="settings.gpsEnabled" (input)="setSettings();"></mat-slide-toggle>
+  </div>
+  <mat-error *ngIf="!settings.gpsEnabled" style="margin: 5px;">GPS Disabilitato.</mat-error>
+</div>

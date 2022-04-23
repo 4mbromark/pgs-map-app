@@ -1,0 +1,45 @@
+.pgs-map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.pgs-map-menu, .pgs-map-dialog {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 40px;
+  background-color: white;
+  z-index: 1000;
+}
+.pgs-map-menu {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  left: 4%;
+  right: 4%;
+  bottom: 2%;
+  width: min-content;
+}
+.pgs-map-dialog {
+  left: 3%;
+  right: 3%;
+  width: auto;
+  height: auto;
+  max-width: 400px;
+}
+
+.pgs-map-menu-button, .pgs-map-menu-button-central {
+  margin: 5px;
+}
+.pgs-map-menu-button {
+  color: var(--pgs-main-color);
+}
+.pgs-map-menu-button-central {
+  color: white;
+  background-color: var(--pgs-main-color);
+}

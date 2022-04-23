@@ -1,0 +1,16 @@
+.pgs-map-drawer-container {
+  width: 100%;
+  height: 100%;
+}
+
+.pgs-map-drawer {
+  width: 350px;
+}
+
+.pgs-map {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 450px;
+  right: 0px;
+}

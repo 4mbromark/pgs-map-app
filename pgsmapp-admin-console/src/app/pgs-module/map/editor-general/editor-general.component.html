@@ -1,0 +1,76 @@
+<div class="pgs-map-editor-section">
+  <div class="pgs-map-editor-container">
+    <span><b>Abilita mappa</b></span>
+    <mat-slide-toggle [(ngModel)]="settings.enabled" (input)="setSettings();"></mat-slide-toggle>
+  </div>
+  <mat-error *ngIf="!settings.enabled" style="margin: 5px;">La mappa è disabilitata.</mat-error>
+</div>
+
+<mat-divider style="margin: 10px;"></mat-divider>
+
+<div class="pgs-map-editor-section">
+  <span class="pgs-map-editor-section-title"><b>Centro</b></span>
+  <div class="pgs-map-editor-container">
+    <mat-radio-group [(ngModel)]="settings.centerAuto" (input)="setSettings();" style="width: 150px;">
+      <mat-radio-button [value]="false">
+        Manuale
+      </mat-radio-button>
+      <mat-radio-button [value]="true">
+        Automatico
+      </mat-radio-button>
+    </mat-radio-group>
+    <div class="pgs-map-editor-container-coordinates" [ngClass]="{ 'pgs-disabled': settings.centerAuto }">
+      <span>centro</span>
+      <app-standard-coordinates-editor *ngIf="settings.center" [(coordinate)]="settings.center">
+      </app-standard-coordinates-editor>
+    </div>
+  </div>
+  <span class="pgs-info-text" *ngIf="!settings.centerAuto">
+    Spostare il centro della mappa con il mouse
+  </span>
+</div>
+
+<mat-divider style="margin: 10px;"></mat-divider>
+
+<div class="pgs-map-editor-section">
+  <div class="pgs-map-editor-container">
+    <span><b>Rotazione iniziale</b></span>
+    <input mat-input class="pgs-input" type="number" [(ngModel)]="settings.rotation" min="-360" max="360" step="1" onKeyDown="return false" (input)="setSettings();" style="width: 70px;">
+  </div>
+</div>
+
+<mat-divider style="margin: 10px;"></mat-divider>
+
+<div class="pgs-map-editor-section">
+  <span class="pgs-map-editor-section-title"><b>Zoom</b></span>
+  <div class="pgs-map-editor-container">
+    <span>Iniziale</span>
+    <mat-slider [(ngModel)]="settings.zoom" tickInterval="auto"[min]="settings.zoomMin" [max]="settings.zoomMax"
+      [thumbLabel]="true" (input)="settings.zoom = $event.value; setSettings();">
+    </mat-slider>
+    <!-- <input mat-input class="pgs-input" [(ngModel)]="settings.zoom" (input)="setSettings();" style="width: 70px;"> -->
+  </div>
+  <div class="pgs-map-editor-container">
+    <span>Minimo</span>
+    <mat-slider [(ngModel)]="settings.zoomMin" tickInterval="auto" [min]="10"
+      [max]="settings.zoom < settings.zoomMax ? settings.zoom : settings.zoomMax" [thumbLabel]="true" (input)="settings.zoomMin = $event.value; setSettings();">
+    </mat-slider>
+    <!-- <input mat-input class="pgs-input" [(ngModel)]="settings.zoomMin" (input)="setSettings();" style="width: 70px;"> -->
+  </div>
+  <div class="pgs-map-editor-container">
+    <span>Massimo</span>
+    <mat-slider [(ngModel)]="settings.zoomMax" tickInterval="auto"
+      [min]="settings.zoom > settings.zoomMin ? settings.zoom : settings.zoomMin" [max]="20" [thumbLabel]="true" (input)="settings.zoomMax = $event.value; setSettings();">
+    </mat-slider>
+    <!-- <input mat-input class="pgs-input" [(ngModel)]="settings.zoomMax" (input)="setSettings();" style="width: 70px;"> -->
+  </div>
+</div>
+
+<mat-divider style="margin: 10px;"></mat-divider>
+
+<div class="pgs-map-editor-section">
+  <div class="pgs-map-editor-container">
+    <span><b>Bordi della mappa</b></span>
+    <input mat-input class="pgs-input" type="number" [(ngModel)]="settings.border" min="0" step="0.01" onKeyDown="return false" (input)="setSettings();" style="width: 70px;">
+  </div>
+</div>

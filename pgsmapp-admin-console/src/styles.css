@@ -1,0 +1,140 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+:root {
+  --pgs-main-color: rgb(67, 115, 103);
+  --pgs-main-color-light: rgb(82, 163, 143);
+}
+
+.mapboxgl-control-container {
+  display: none !important;
+}
+
+/* OVERRIDE SCROLLBAR */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px white;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: lightgray;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pgs-main-color);
+}
+
+/* OVERRIDE ANGULAR MATERIAL */
+.mat-expansion-panel-body {
+  background-color: rgb(239, 239, 239);
+  padding-top: 20px !important;
+}
+
+.mat-radio-inner-circle, .mat-radio-outer-circle {
+  border-color: var(--pgs-main-color) !important;
+  color: var(--pgs-main-color) !important;
+}
+.mat-radio-inner-circle {
+  background-color: var(--pgs-main-color) !important;
+}
+.mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple) {
+  background-color: var(--pgs-main-color) !important;
+}
+.mat-radio-persistent-ripple {
+  background-color: transparent !important;
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: var(--pgs-main-color-light) !important;
+}
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: var(--pgs-main-color) !important;
+}
+
+/* GENERICHE */
+.pgs-disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.pgs-button {
+  width: 80%;
+  border-radius: 0px !important;
+  background-color: var(--pgs-main-color);
+  color: white;
+}
+.pgs-button-content {
+  width: 100%;
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.pgs-button-icon-container {
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.pgs-input, .pgs-input:focus {
+  width: 50%;
+  border: 1px solid var(--pgs-main-color);
+  outline-width: 0px;
+}
+
+.pgs-info-text {
+  color: blue;
+  margin: 5px;
+}
+
+/* MAP - MAP EDITOR */
+.pgs-map-editor-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pgs-map-editor-section-title {
+  width: 80%;
+  text-align: left;
+  margin: 5px;
+}
+
+.pgs-map-editor-corner-group {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.pgs-map-editor-container-coordinates {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid var(--pgs-main-color);
+  background-color: var(--pgs-main-color);
+  color: white;
+  user-select: none;
+}
+.pgs-map-editor-container-coordinates:hover {
+  cursor: pointer;
+}
+
+.pgs-map-editor-container {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  padding: 5px 10px;
+}

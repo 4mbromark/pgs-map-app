@@ -1,0 +1,21 @@
+.pgs-drawer-container {
+  width: 100%;
+  height: 100%;
+}
+
+.pgs-drawer {
+  width: 100px;
+}
+
+.pgs-drawer-button {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--pgs-main-color);
+  font-size: medium;
+  font-weight: 600;
+}

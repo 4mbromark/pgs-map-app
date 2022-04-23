@@ -1,0 +1,27 @@
+<div id="pgs-map" class="pgs-map"></div>
+
+<div *ngIf="!isOpen" class="pgs-map-menu mat-elevation-z5">
+  <button mat-icon-button class="pgs-map-menu-button" [style.width]="buttonSize + 'px'" [style.height]="buttonSize + 'px'">
+    <fa-icon icon="expand-arrows-alt" [size]="iconSize"></fa-icon>
+  </button>
+  <button mat-icon-button class="pgs-map-menu-button" [style.width]="buttonSize + 'px'" [style.height]="buttonSize + 'px'">
+    <fa-icon icon="map-pin" [size]="iconSize"></fa-icon>
+  </button>
+  <button mat-icon-button class="pgs-map-menu-button-central mat-elevation-z2" [style.width]="buttonSize + 'px'" [style.height]="buttonSize + 'px'" (click)="openMenu();">
+    <fa-icon icon="search" [size]="iconSize"></fa-icon>
+  </button>
+  <button mat-icon-button class="pgs-map-menu-button" [style.width]="buttonSize + 'px'" [style.height]="buttonSize + 'px'">
+    <fa-icon icon="map-marker-alt" [size]="iconSize"></fa-icon>
+  </button>
+  <button mat-icon-button class="pgs-map-menu-button" [style.width]="buttonSize + 'px'" [style.height]="buttonSize + 'px'">
+    <fa-icon icon="location-arrow" [size]="iconSize"></fa-icon>
+  </button>
+</div>
+
+<div class="pgs-map-dialog mat-elevation-z5" [hidden]="!isOpen" [@openClose]="isOpen ? 'open' : 'closed'">
+
+  <button mat-raised-button class="pgs-map-menu-button-central mat-elevation-z2" (click)="isOpen = false">
+    Indietro
+    <fa-icon class="pgs-map-menu-button-icon" icon="arrow-left" [size]="'lg'"></fa-icon>
+  </button>
+</div>

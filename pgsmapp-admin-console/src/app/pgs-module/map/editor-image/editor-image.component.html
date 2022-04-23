@@ -1,0 +1,40 @@
+<div class="pgs-map-editor-section">
+  <span class="pgs-map-editor-section-title"><b>Immagine della mappa</b></span>
+  <button mat-button class="pgs-button">
+    <div class="pgs-button-content">
+      <span class="pgs-button-icon-container">
+        <fa-icon icon="upload" size="lg"></fa-icon>
+      </span>
+      <span>Cambia immagine</span>
+    </div>
+  </button>
+  <span *ngIf="file" style="margin: 5px;">pgs-image.jpg</span>
+  <mat-error *ngIf="!file" style="margin: 5px;">Nessun file mappa caricato.</mat-error>
+</div>
+
+<mat-divider style="margin: 10px;"></mat-divider>
+
+<div class="pgs-map-editor-section" [ngClass]="{ 'pgs-disabled': !file }">
+  <span class="pgs-map-editor-section-title"><b>Ancoraggio mappa</b></span>
+  <div class="pgs-map-editor-corner-group">
+    <div class="pgs-map-editor-container-coordinates">
+      <span>nord-ovest</span>
+      <app-standard-coordinates-editor [(coordinate)]="settings.anchorNw"></app-standard-coordinates-editor>
+    </div>
+    <div class="pgs-map-editor-container-coordinates">
+      <span>nord-est</span>
+      <app-standard-coordinates-editor [(coordinate)]="settings.anchorNe"></app-standard-coordinates-editor>
+    </div>
+  </div>
+  <fa-icon icon="expand-arrows-alt" size="4x" style="color: var(--pgs-main-color); margin: 10px;"></fa-icon>
+  <div class="pgs-map-editor-corner-group">
+    <div class="pgs-map-editor-container-coordinates">
+      <span>sud-ovest</span>
+      <app-standard-coordinates-editor [(coordinate)]="settings.anchorSw"></app-standard-coordinates-editor>
+    </div>
+    <div class="pgs-map-editor-container-coordinates">
+      <span>sud-est</span>
+      <app-standard-coordinates-editor [(coordinate)]="settings.anchorSe"></app-standard-coordinates-editor>
+    </div>
+  </div>
+</div>

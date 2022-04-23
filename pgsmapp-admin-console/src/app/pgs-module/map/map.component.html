@@ -1,0 +1,64 @@
+<mat-sidenav-container class="pgs-map-drawer-container">
+  <mat-sidenav class="pgs-map-drawer" mode="side" opened>
+    <mat-accordion>
+      <mat-expansion-panel class="mat-elevation-z0">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span class="pgs-button-icon-container">
+              <fa-icon icon="cog" size="lg"></fa-icon>
+            </span>
+            Generali
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <app-editor-general *ngIf="map && map.settings" [(settings)]="map.settings" (settingsChange)="setMapSettings();"></app-editor-general>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="mat-elevation-z0">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span class="pgs-button-icon-container">
+              <fa-icon icon="image" size="lg"></fa-icon>
+            </span>
+            Immagine
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <app-editor-image *ngIf="map && map.settings" [(settings)]="map.settings" [file]="map.file"></app-editor-image>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="mat-elevation-z0">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span class="pgs-button-icon-container">
+              <fa-icon icon="map-marker-alt" size="lg"></fa-icon>
+            </span>
+            Marcatori
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <app-editor-marker></app-editor-marker>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="mat-elevation-z0">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span class="pgs-button-icon-container">
+              <fa-icon icon="location-arrow" size="lg"></fa-icon>
+            </span>
+            Geolocalizzazione
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <app-editor-gps *ngIf="map && map.settings" [(settings)]="map.settings" (settingsChange)="setMapSettings();"></app-editor-gps>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div #mape class="pgs-map"></div>
+    <mat-spinner *ngIf="loading"></mat-spinner>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<simple-notifications></simple-notifications>
